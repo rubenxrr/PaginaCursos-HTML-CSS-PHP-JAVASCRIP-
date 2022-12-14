@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Roboto:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Mono', monospace;
+}
+body{
+    height: 100vh;
+    background-color: #EFEFEF;
+}
+
+/*CURSOS*/
+.txth1{
+    color: #333;
+}
+.cursos{
+    background-color: #EFEFEF;
+    min-height:90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.des-contenido{
+    margin: 0 40px;
+}
+.tarjeta{
+    width: 320px;
+    border-radius: 25px;
+    background-color: #FFF;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+}
+.imagen-contenido,.tarjeta-contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.imagen-contenido{
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #057EB0;
+    border-radius: 25px 25px 0 25px;
+}
+.overlay::before,.overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #057EB0;
+}
+.overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color:#fff;
+}
+.tarjeta-imagen{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 3px;
+}
+.tarjeta-imagen .tarjeta-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+.curso{
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+.descripcion{
+    margin: 8px;
+    font-size: 14px;
+    color:#707070;
+    text-align: center;
+}
+.descripcion{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+
+.boton:hover{
+    background-color: #0CB9FF;
+}
+/*DIVS CURSOS*/
+.cursoh1{
+    left: 0;
+    top: 0;
+    position:absolute;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 100%;
+}
+.txth1{
+    padding-top: 30px;
+    text-align: center;
+}
+.contenido{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+}
+#click{
+    display: none;
+}
+.click-me{
+    display: block;
+    padding: 8px 16px;
+    background-color: #057EB0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+    margin: 20px;
+}
+.click-me:hover{
+    background-color: #0CB9FF;
+}
+.contenido{
+    opacity: 0;
+    visibility: hidden;
+    width: 850px;
+    height: 650px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+}
+#click:checked ~ .contenido{
+    opacity: 1;
+    visibility: visible;
+}
+.cabezera{
+    height: 68px;
+    background-color: #057EB0;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+.cabezera h2{
+    color: white;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.fa-times{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.python p{
+    padding-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+    margin: 10px 40px;
+}
+.linea{
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+.close-btn{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #057EB0;
+    border-radius: 3px;
+    color: #057EB0;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boton{
+    background-color: #057EB0;
+    position: absolute;
+    bottom: 12px;
+    right: 130px;
+    border: 1px solid #057EB0;
+    border-radius: 3px;
+    color:white;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boton:hover{
+    background-color: greenyellow;
+    color: #057EB0;
+}
+.close-btn:hover{
+    background: #057EB0;
+    color: white;
+    transition: .5s;
+}
+.semanas{
+    border-radius: 7px;
+    margin: 5px 10px;
+    height: 165px;
+    width: 250px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    float: left;
+}
+.semanas p{
+    font-size: 15px;
+    text-align: center;
+}
+.psemana{
+    font-weight: bold;
+}
+
+/*CURSO 2*/
+.contenido1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+}
+#click1{
+    display: none;
+}
+.click-me1{
+    display: block;
+    padding: 8px 16px;
+    background-color: #057EB0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+    margin: 20px;
+}
+.click-me1:hover{
+    background-color: #0CB9FF;
+}
+.contenido1{
+    opacity: 0;
+    visibility: hidden;
+    width: 850px;
+    height: 650px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+}
+#click1:checked ~ .contenido1{
+    opacity: 1;
+    visibility: visible;
+}
+.cabezera1{
+    height: 68px;
+    background-color: #057EB0;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+.cabezera1 h2{
+    color: white;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.fa-times1{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.javascript p{
+    padding-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+    margin: 10px 40px;
+}
+.close-btn1{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #057EB0;
+    border-radius: 3px;
+    color: #057EB0;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+/*CURSO 3*/
+.contenido2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+}
+#click2{
+    display: none;
+}
+.click-me2{
+    display: block;
+    padding: 8px 16px;
+    background-color: #057EB0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+    margin: 20px;
+}
+.click-me2:hover{
+    background-color: #0CB9FF;
+}
+.contenido2{
+    opacity: 0;
+    visibility: hidden;
+    width: 850px;
+    height: 650px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+}
+#click2:checked ~ .contenido2{
+    opacity: 1;
+    visibility: visible;
+}
+.cabezera2{
+    height: 68px;
+    background-color: #057EB0;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+.cabezera2 h2{
+    color: white;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.fa-times2{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.java p{
+    padding-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+    margin: 10px 40px;
+}
+.close-btn2{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #057EB0;
+    border-radius: 3px;
+    color: #057EB0;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+/*CURSO 4*/
+.contenido3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+}
+#click3{
+    display: none;
+}
+.click-me3{
+    display: block;
+    padding: 8px 16px;
+    background-color: #057EB0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+    margin: 20px;
+}
+.click-me3:hover{
+    background-color: #0CB9FF;
+}
+.contenido3{
+    opacity: 0;
+    visibility: hidden;
+    width: 850px;
+    height: 650px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+}
+#click3:checked ~ .contenido3{
+    opacity: 1;
+    visibility: visible;
+}
+.cabezera3{
+    height: 68px;
+    background-color: #057EB0;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+.cabezera3 h2{
+    color: white;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.fa-times3{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.c p{
+    padding-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+    margin: 10px 40px;
+}
+.close-btn3{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #057EB0;
+    border-radius: 3px;
+    color: #057EB0;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.regresar{
+    height: 10%;
+    text-align: center;
+}
+.boton1{
+    padding: 5px 16px;
+    background-color: #057EB0;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    margin: 20px;
+}
+.boton1:hover{
+    background-color: #0CB9FF;
+}
+.iframe{
+   width:560px;
+   height:315px;
+}
+@media screen and (max-width:1367px){
+    .cursos{
+        background-color: #EFEFEF;
+        min-height: 97vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .des-contenido{
+        margin: 0 8px;
+    }
+    .tarjeta{
+
+        width: 320px;
+        border-radius: 20px;
+        background-color: #FFF;
+        box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+    }
+    .txth1{
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (max-width:900px){
+    /* CURSOS*/
+    .cursos{
+        flex-direction: column;
+    }
+    .des-contenedor{
+        margin: 10px;
+    }
+    .iframe{
+    width:360px;
+    height:215px;
+}
+.contenido,.contenido1,.contenido2,.contenido3{
+    opacity: 0;
+    visibility: hidden;
+    width: 360px;
+    height: 910px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+    text-align:center;
+}
+.semanas{
+    margin:0px auto;
+    float: none;
+}
+ 
+}
